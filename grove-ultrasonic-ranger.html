@@ -1,0 +1,48 @@
+<script type="text/javascript">
+    RED.nodes.registerType('grove-ultrasonic-ranger',{
+        category: 'grove-base-hat',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            port_number: {value:5}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "bridge.png",
+        label: function() {
+            return this.name||"grove-ultrasonic-ranger";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="grove-ultrasonic-ranger">
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Port</label>
+        <select style="width:90px; margin-left:20px;" id="node-input-port_number" value="5">
+            <option value="5">D5</option>
+            <option value="16">D16</option>
+            <option value="18">D18</option>
+            <option value="22">D22</option>
+            <option value="24">D24</option>
+            <option value="26">D26</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="grove-ultrasonic-ranger">
+    <p>The node controls Grove Ultrasonic Ranger.</p>
+    <h3>Outputs</h3>
+        <dl class="message-properties">
+        <dt>payload
+            <span class="property-type">number</span>
+        </dt>
+        <dd>the payload of detected Grove Ultrasonic Ranger data. The data unit publish as centimeter.</dd>
+    <h3>Details</h3>
+    <p>This node listens to Ultrasonic Ranger and publish the detected its sensor data.</p>
+</script>
