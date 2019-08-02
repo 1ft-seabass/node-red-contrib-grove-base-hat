@@ -1,3 +1,5 @@
+var path = require('path');
+
 module.exports = function(RED) {
     function GrobeButtonNode(config) {
         RED.nodes.createNode(this,config);
@@ -12,7 +14,7 @@ module.exports = function(RED) {
 
         const gpio_pin = this.port_number;
         const spawn = require('child_process').spawn;
-        const grove_python = spawn('python', [ '-u' , 'grove-button.py' , gpio_pin ]);
+        const grove_python = spawn('python', [ '-u' , path.join( __dirname , 'grove-button.py' ) , gpio_pin ]);
         this.status({fill:"green",shape:"dot",text:this.port_name + " listened"});
         
         this.on("input", function(msg) {

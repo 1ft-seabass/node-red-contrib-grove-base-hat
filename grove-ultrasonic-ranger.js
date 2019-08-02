@@ -1,3 +1,5 @@
+var path = require('path');
+
 module.exports = function(RED) {
     function GroveUltraSonicNode(config) {
         RED.nodes.createNode(this,config);
@@ -14,16 +16,9 @@ module.exports = function(RED) {
 
             const exec = require('child_process').exec;
             this.status({fill:"yellow",shape:"ring",text:this.port_name + " connecting"});
-            exec('python -u grove-ultrasonic-ranger.py ' + gpio_pin + ' ' + msg.payload, (err, stdout, stderr) => {
+            exec('python -u ' + path.join( __dirname , 'grove-ultrasonic-ranger.py' ) + ' ' + gpio_pin + ' ' + msg.payload, (err, stdout, stderr) => {
                 if (err) { console.log(err); }
-                let str = stdout.toString();
-                let jsonData;
-                try {
-                    jsonData = JSON.parse(str);
-                } catch (e) {
-                    jsonData = e.toString();
-                }
-                msg.payload = jsonData;
+                msg.payload = Number(stdout);
                 this.status({fill:"green",shape:"dot",text:this.port_name + " connected"});
                 node.send(msg);
             });
