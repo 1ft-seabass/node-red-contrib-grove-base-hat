@@ -1,0 +1,40 @@
+<script type="text/javascript">
+    RED.nodes.registerType('grove-oled-display-128x64',{
+        category: 'grove-base-hat',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:0,
+        icon: "light.png",
+        label: function() {
+            return this.name||"grove-oled-display-128x64";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="grove-oled-display-128x64">
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Port</label>
+        I2C
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="grove-oled-display-128x64">
+    <p>The node controls Grove LED.</p>
+    <h3>Inputs</h3>
+        <dl class="message-properties">
+        <dt>payload
+            <span class="property-type">number</span>
+        </dt>
+        <dd> the payload of the message to publish.</dd>
+    <h3>Details</h3>
+    <p>This node controls Grove LED. When the payload is 1, The node turn on it. When the payload is 0, The node turn off it.</p>
+ </script>

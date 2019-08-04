@@ -1,0 +1,48 @@
+<script type="text/javascript">
+    RED.nodes.registerType('grove-tilt-switch',{
+        category: 'grove-base-hat',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            port_number: {value:5}
+        },
+        inputs:0,
+        outputs:1,
+        icon: "arrow-in.png",
+        label: function() {
+            return this.name||"grove-tilt-switch";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="grove-tilt-switch">
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Port</label>
+        <select style="width:90px; margin-left:20px;" id="node-input-port_number" value="5">
+            <option value="5">D5</option>
+            <option value="16">D16</option>
+            <option value="18">D18</option>
+            <option value="22">D22</option>
+            <option value="24">D24</option>
+            <option value="26">D26</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="grove-tilt-switch">
+    <p>The node controls Grove Button.</p>
+    <h3>Outputs</h3>
+        <dl class="message-properties">
+        <dt>payload
+            <span class="property-type">number</span>
+        </dt>
+        <dd>the payload of Grove Button status. the value of 1 when the button is pressed and 0 when the button is released.</dd>
+    <h3>Details</h3>
+    <p>This node listens to Grove Button and response Grove Button status.</p>
+</script>
