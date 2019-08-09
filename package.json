@@ -16,15 +16,15 @@
   "license": "ISC",
   "node-red": {
     "nodes": {
-      "grove-led": "grove-led.js",
-      "grove-button": "grove-button.js",
-      "grove-ultrasonic-ranger": "grove-ultrasonic-ranger.js",
-      "grove-light-sensor-v1_2": "grove-light-sensor-v1_2.js",
-      "grove-temperature-sensor": "grove-temperature-sensor.js",
-      "grove-4-digit-display": "grove-4-digit-display.js",
-      "grove-relay": "grove-relay.js",
-      "grove-gesture-sensor": "grove-gesture-sensor.js",
-      "grove-oled-display-128x64":"grove-oled-display-128x64.js"
+      "grove-led": "grove-led/grove-led.js",
+      "grove-button": "grove-button/grove-button.js",
+      "grove-ultrasonic-ranger": "grove-ultrasonic-ranger/grove-ultrasonic-ranger.js",
+      "grove-light-sensor-v1_2": "grove-light-sensor-v1_2/grove-light-sensor-v1_2.js",
+      "grove-temperature-sensor": "grove-temperature-sensor/grove-temperature-sensor.js",
+      "grove-4-digit-display": "grove-4-digit-display/grove-4-digit-display.js",
+      "grove-relay": "grove-relay/grove-relay.js",
+      "grove-gesture-sensor": "grove-gesture-sensor/grove-gesture-sensor.js",
+      "grove-oled-display-128x64": "grove-oled-display-128x64/grove-oled-display-128x64.js"
     }
   },
   "dependencies": {}
