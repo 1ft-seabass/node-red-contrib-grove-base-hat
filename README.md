@@ -14,6 +14,8 @@ The node don't support Grove Base HAT for Raspberry Pi Zero **yet**.
 
 ## Install and Setup
 
+.
+
 ### 0. Setup Grove Base HAT
 
 Install Online one-click installation flow at basic Grove Base HAT setup page.
@@ -37,6 +39,8 @@ Adding nodes to the palette
 https://nodered.org/docs/user-guide/runtime/adding-nodes
 
 ## How to use
+
+.
 
 ## Prepare and connect Grove LED
 
