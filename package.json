@@ -24,7 +24,8 @@
       "grove-4-digit-display": "grove-4-digit-display/grove-4-digit-display.js",
       "grove-relay": "grove-relay/grove-relay.js",
       "grove-gesture-sensor": "grove-gesture-sensor/grove-gesture-sensor.js",
-      "grove-oled-display-128x64": "grove-oled-display-128x64/grove-oled-display-128x64.js"
+      "grove-oled-display-128x64": "grove-oled-display-128x64/grove-oled-display-128x64.js",
+      "grove-i2c-color-sensor-v2": "grove-i2c-color-sensor-v2/grove-i2c-color-sensor-v2.js"
     }
   },
   "dependencies": {}
