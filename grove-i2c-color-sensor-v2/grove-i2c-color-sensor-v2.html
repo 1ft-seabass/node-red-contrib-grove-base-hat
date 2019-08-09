@@ -1,0 +1,40 @@
+<script type="text/javascript">
+    RED.nodes.registerType('grove-i2c-color-sensor-v2',{
+        category: 'grove-base-hat',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "bridge.png",
+        label: function() {
+            return this.name||"grove-i2c-color-sensor-v2";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="grove-i2c-color-sensor-v2">
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Port</label>
+        I2C
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="grove-i2c-color-sensor-v2">
+    <p>The node controls Grove I2C Color Sensor v2.</p>
+    <h3>Outputs</h3>
+        <dl class="message-properties">
+        <dt>payload
+            <span class="property-type">object</span>
+        </dt>
+        <dd>the payload of detected Grove I2C Color Sensor v2 data. The datas publish as 16 bits red, green, blue and clear Object data.</dd>
+    <h3>Details</h3>
+    <p>This node listens to Grove I2C Color Sensor v2 and publish the detected its sensor data.</p>
+</script>
