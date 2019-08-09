@@ -3,8 +3,8 @@ var path = require('path');
 module.exports = function(RED) {
     function GroveLedNode(config) {
 
-        console.log(path.join(__dirname , 'grove-led.py'));
-        console.log("__dirname " , __dirname );
+        // console.log(path.join(__dirname , 'grove-led.py'));
+        // console.log("__dirname " , __dirname );
 
         RED.nodes.createNode(this,config);
 
