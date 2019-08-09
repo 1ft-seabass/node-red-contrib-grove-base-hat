@@ -36,13 +36,13 @@
 </script>
 
 <script type="text/x-red" data-help-name="grove-4-digit-display">
-    <p>The node controls Grove LED.</p>
+    <p>The node controls Grove 4 Digit Display.</p>
     <h3>Inputs</h3>
         <dl class="message-properties">
         <dt>payload
-            <span class="property-type">number</span>
+            <span class="property-type">object</span>
         </dt>
         <dd> the payload of the message to publish.</dd>
     <h3>Details</h3>
-    <p>This node controls Grove LED. When the payload is 1, The node turn on it. When the payload is 0, The node turn off it.</p>
+    <p>This node controls Grove 4 Digit Display. <code>msg.payload.message</code> is used as the payload of the published 4 digits string. <code>msg.payload.colon</code> is used as the payload of the published centered colon enabled as value of 1 and disenabled as value of 0. <code>msg.payload.clear</code> used as the payload for turned off the display. Check <a href="http://wiki.seeedstudio.com/Grove-4-Digit_Display/" target="_blank">Grove-4-Digit_Display Wiki page</a> when you would like to know the detail of available strings.</p>
  </script>
