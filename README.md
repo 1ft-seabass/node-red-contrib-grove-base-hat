@@ -82,7 +82,7 @@ Click Node-RED inject nodes written 1 and 0.  When inject nodes as 1, Grove LED 
 * grove-temperature-sensor
     * Grove - Temperature Sensor https://www.seeedstudio.com/Grove-Temperature-Sensor-p-774.html
 * grove-4-digit-display
-    * Grove - 4 Digit Display https://www.seeedstudio.com/Grove-Servo-p-1241.html
+    * Grove - 4 Digit Display https://www.seeedstudio.com/Grove-4-Digit-Display.html
 * grove-relay
     * Grove - Relay https://www.seeedstudio.com/s/Grove-Relay-p-769.html
 * grove-gesture-sensor
