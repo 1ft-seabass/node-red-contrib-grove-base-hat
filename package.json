@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-grove-base-hat",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "The node for Grove Base HAT for Raspberry Pi.",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,9 @@
       "grove-relay": "grove-relay/grove-relay.js",
       "grove-gesture-sensor": "grove-gesture-sensor/grove-gesture-sensor.js",
       "grove-oled-display-128x64": "grove-oled-display-128x64/grove-oled-display-128x64.js",
-      "grove-i2c-color-sensor-v2": "grove-i2c-color-sensor-v2/grove-i2c-color-sensor-v2.js"
+      "grove-i2c-color-sensor-v2": "grove-i2c-color-sensor-v2/grove-i2c-color-sensor-v2.js",
+      "grove_temperature_humidity_sensor_sht3x": "grove-temperature-humidity-sensor-sht3x/grove-temperature-humidity-sensor-sht3x.js",
+      "grove-magnetic-switch": "grove-magnetic-switch/grove-magnetic-switch.js"
     }
   },
   "dependencies": {}
