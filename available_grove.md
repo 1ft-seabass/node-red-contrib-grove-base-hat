@@ -42,5 +42,6 @@
 * grove-magnetic-switch
     * Grove - Magnetic Switch
         * https://www.seeedstudio.com/Grove-Magnetic-Switch-p-744.html
-
-
+* grove-servo
+    * Grove-Servo
+        * https://www.seeedstudio.com/Grove-Servo.html
