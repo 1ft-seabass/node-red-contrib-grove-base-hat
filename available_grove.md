@@ -42,13 +42,5 @@
 * grove-magnetic-switch
     * Grove - Magnetic Switch
         * https://www.seeedstudio.com/Grove-Magnetic-Switch-p-744.html
-* grove-rgb-led-ws2813-mini
-    * Grove - RGB LED (WS2813 Mini)
-        * https://www.seeedstudio.com/Grove-RGB-LED-WS2813-Mini-p-4269.html
-    * Grove - RGB LED Stick (10 - WS2813 Mini)
-        * https://www.seeedstudio.com/Grove-RGB-LED-Stick-10-WS2813-Mini.html
-    * Grove - RGB LED Stick (15-WS2813 Mini)
-        * https://www.seeedstudio.com/Grove-RGB-LED-Stick-15-WS2813-Mini-p-4270.html
-    * Grove - RGB LED Stick (20-WS2813 Mini)
-        * https://www.seeedstudio.com/Grove-RGB-LED-Stick-20-WS2813-Mini-p-4271.html
+
 
