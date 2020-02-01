@@ -54,11 +54,14 @@ class GroveServo:
         # Map angle from range 0 ~ 180 to range 25 ~ 125
         angle = max(min(angle, GroveServo.MAX_DEGREE), GroveServo.MIN_DEGREE)
         tmp = interp(angle, [0, 180], [25, 125])
-        self.pwm.ChangeDutyCycle(round(tmp/10.0, 1))
+        changeDutyCycle = round(tmp/10.0, 1)
+        self.pwm.ChangeDutyCycle(changeDutyCycle)
 
 Grove = GroveServo
 
 def main():
+
+    args = sys.argv
 
     # print disable
     sys.stdout = open(os.devnull, 'w')
@@ -72,8 +75,17 @@ def main():
     # print enable
     sys.stdout = sys.__stdout__
 
-    control = int(argvs[2])
-    servo.setAngle(control)
+    controlDegree = int(args[2])
+
+    # memo: 0.12 Sec / 60 degree
+    # This logic is about 1.00 sec control. 0.05 sec * 20 = 1.00 sec :)
+    count = 0
+    while count < 20:
+        count += 1
+        print(count,'/20')
+        servo.setAngle(controlDegree)
+        time.sleep(0.05)
+    print('finish')
 
 if __name__ == '__main__':
     main()

@@ -19,13 +19,9 @@
 
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Port</label>
-        <select style="width:90px; margin-left:20px;" id="node-input-port_number" value="5">
-            <option value="5">D5</option>
-            <option value="16">D16</option>
+        <select style="width:90px; margin-left:20px;" id="node-input-port_number" value="12">
             <option value="18">D18</option>
-            <option value="22">D22</option>
-            <option value="24">D24</option>
-            <option value="26">D26</option>
+            <option value="12">PWM</option>
         </select>
     </div>
 
@@ -44,5 +40,5 @@
         </dt>
         <dd> the payload of the message to publish.</dd>
     <h3>Details</h3>
-    <p>This node controls Grove LED. When the payload is 1, The node turn on it. When the payload is 0, The node turn off it.</p>
+    <p>This node controls Grove Servo. The payload can control servo degree. For example when the payload is 60, The node set 60 degree it. This controling time is for about 1.00 sec because its based python control continue to touching PWM using ChangeDutyCycle. Then the 1.00 sec time is 20 times touching. In this case the 1.00 sec time is 20 times touching. Its count is almost no problem and a little over count. This is next brushup-point maybe. :)</p>
  </script>

@@ -7,7 +7,12 @@ module.exports = function(RED) {
 
         this.port_number = config.port_number;
 
-        this.port_name = "D" + this.port_number;
+        if(this.port_number == 12){
+            this.port_name = "PWM";
+        } else {
+            this.port_name = "D" + this.port_number;
+        }
+        
         this.status({fill:"blue",shape:"dot",text:this.port_name});
         
         var node = this;
