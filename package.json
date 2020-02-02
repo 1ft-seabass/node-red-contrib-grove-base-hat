@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-grove-base-hat",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "The node for Grove Base HAT for Raspberry Pi.",
   "main": "index.js",
   "scripts": {
@@ -12,8 +12,13 @@
     "Grove Base HAT",
     "Seeed"
   ],
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
+  "homepage": "https://github.com/1ft-seabass/node-red-contrib-grove-base-hat",
+  "author": {
+      "name": "Seigo Tanaka",
+      "email": "seigo@1ft-seabass.jp",
+      "url": "http://1ft-seabass.jp/"
+  },
   "node-red": {
     "nodes": {
       "grove-led": "grove-led/grove-led.js",
