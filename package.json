@@ -28,7 +28,6 @@
       "grove-i2c-color-sensor-v2": "grove-i2c-color-sensor-v2/grove-i2c-color-sensor-v2.js",
       "grove_temperature_humidity_sensor_sht3x": "grove-temperature-humidity-sensor-sht3x/grove-temperature-humidity-sensor-sht3x.js",
       "grove-magnetic-switch": "grove-magnetic-switch/grove-magnetic-switch.js",
-      "grove-rgb-led-ws2813-mini": "grove-rgb-led-ws2813-mini/grove-rgb-led-ws2813-mini.js",
       "grove-servo": "grove-servo/grove-servo.js"
     }
   },
