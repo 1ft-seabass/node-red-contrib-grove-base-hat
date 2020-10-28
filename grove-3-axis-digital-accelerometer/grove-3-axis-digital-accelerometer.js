@@ -25,18 +25,13 @@ module.exports = function(RED) {
             node.log(`stdout: ${data}`);
             
             let str_data = String(data);
-            let str_sensor_data = str_data;
-            if(str_data.length > 2){
-                str_sensor_data = str_data.substr(0,1);
-            }
-
-            // node.log(str_data.length);
 
             this.status({fill:"blue",shape:"dot",text:this.port_name + " value chanded"});
             let _self = this;
 
             msg = {};
-            msg.payload = Number(str_sensor_data);
+            //msg.payload = Number(str_sensor_data);
+            msg.payload = str_data;
             node.send(msg);
             
             setTimeout(
