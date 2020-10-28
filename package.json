@@ -15,9 +15,9 @@
   "license": "MIT",
   "homepage": "https://github.com/1ft-seabass/node-red-contrib-grove-base-hat",
   "author": {
-      "name": "Seigo Tanaka",
-      "email": "seigo@1ft-seabass.jp",
-      "url": "http://1ft-seabass.jp/"
+    "name": "Seigo Tanaka",
+    "email": "seigo@1ft-seabass.jp",
+    "url": "http://1ft-seabass.jp/"
   },
   "node-red": {
     "nodes": {
