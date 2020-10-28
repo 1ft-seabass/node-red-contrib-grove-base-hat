@@ -66,5 +66,5 @@ module.exports = function(RED) {
             node.send(msg);
         });
     }
-    RED.nodes.registerType("grove-button",Grove3AxisDigitalAccelerometerNode);
+    RED.nodes.registerType("grove-3-axis-digital-accelerometer",Grove3AxisDigitalAccelerometerNode);
 }
