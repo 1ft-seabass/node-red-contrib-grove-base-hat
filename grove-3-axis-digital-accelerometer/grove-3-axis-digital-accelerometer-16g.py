@@ -135,10 +135,7 @@ if __name__ == "__main__":
  
     while True:
         axes = adxl345.getAxes(True)
-        print(json.dumps({
-            "x":'{:.3f}'.format(axes['x']), 
-            "y":'{:.3f}'.format(axes['y']), 
-            "z":'{:.3f}'.format(axes['z'])}))
+        print(json.dumps({"x":'{:.3f}'.format(axes['x']), "y":'{:.3f}'.format(axes['y']), "z":'{:.3f}'.format(axes['z'])}))
         # print "ADXL345 on address 0x%x:" % (adxl345.address)
         # print "   x = %.3fG" % ( axes['x'] )
         # print "   y = %.3fG" % ( axes['y'] )
