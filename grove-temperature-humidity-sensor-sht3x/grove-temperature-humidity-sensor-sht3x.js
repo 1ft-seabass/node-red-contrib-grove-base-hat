@@ -11,8 +11,8 @@ module.exports = function(RED) {
         node.on('input', function(msg) {
             const exec = require('child_process').exec;
             this.status({fill:"yellow",shape:"ring",text:this.port_name + " connecting"});
-            console.log('python -u ' + path.join( __dirname , 'grove-temperature-humidity-sensor-sht3x.py' ), node.model);
-            exec('python -u ' + path.join( __dirname , 'grove-temperature-humidity-sensor-sht3x.py' ) + ' ' + node.model, (err, stdout, stderr) => {
+
+            exec('python -u ' + path.join( __dirname , 'grove-temperature-humidity-sensor-sht3x.py' ) + ' ' + config.model, (err, stdout, stderr) => {
                 if (err) { console.log(err); }
                 // console.log(stdout);
                 msg.payload = JSON.parse(stdout);
