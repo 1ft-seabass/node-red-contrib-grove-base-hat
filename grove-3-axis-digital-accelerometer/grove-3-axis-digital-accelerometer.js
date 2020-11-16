@@ -23,15 +23,13 @@ module.exports = function(RED) {
 
         grove_python.stdout.on('data', (data) => {
             node.log(`stdout: ${data}`);
-            
-            let str_data = String(data);
 
             this.status({fill:"blue",shape:"dot",text:this.port_name + " value chanded"});
             let _self = this;
 
             msg = {};
             //msg.payload = Number(str_sensor_data);
-            msg.payload = str_data;
+            msg.payload = JSON.parse(data);
             node.send(msg);
             
             setTimeout(
