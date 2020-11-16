@@ -86,11 +86,14 @@ Grove = GroveTemperatureHumiditySensorSHT3x
 
 
 def main():
+    # get address
+    arguments = sys.argv
+    address = int(arguments[1], base=16)
 
     # print disable
     sys.stdout = open(os.devnull, 'w')
 
-    sensor = GroveTemperatureHumiditySensorSHT3x()
+    sensor = GroveTemperatureHumiditySensorSHT3x(address)
 
     # print enable
     sys.stdout = sys.__stdout__
