@@ -14,7 +14,7 @@ module.exports = function(RED) {
 
         const gpio_pin = this.port_number;
         const spawn = require('child_process').spawn;
-        const grove_python = spawn('python', [ '-u' , path.join( __dirname , 'grove-3-axis-digital-accelerometer.py' ) , gpio_pin ]);
+        const grove_python = spawn('python', [ '-u' , path.join( __dirname , 'grove-3-axis-digital-accelerometer-16g.py' ) , gpio_pin ]);
         this.status({fill:"green",shape:"dot",text:this.port_name + " listened"});
         
         this.on("input", function(msg) {
@@ -61,5 +61,5 @@ module.exports = function(RED) {
             node.send(msg);
         });
     }
-    RED.nodes.registerType("grove-3-axis-digital-accelerometer",Grove3AxisDigitalAccelerometerNode);
+    RED.nodes.registerType("grove-3-axis-digital-accelerometer", Grove3AxisDigitalAccelerometerNode);
 }
