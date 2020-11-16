@@ -3,7 +3,8 @@
         category: 'grove-base-hat',
         color: '#a6bbcf',
         defaults: {
-            name: {value:""}
+            name: {value:""},
+            version: {value: "0x44"}
         },
         inputs:1,
         outputs:1,
@@ -19,6 +20,14 @@
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Port</label>
         I2C
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Port</label>
+        <select style="width:90px; margin-left:20px;" id="node-input-version" value="0">
+            <option value="0x44">SHT31</option>
+            <option value="0x45">SHT35</option>
+        </select>
     </div>
 
     <div class="form-row">
