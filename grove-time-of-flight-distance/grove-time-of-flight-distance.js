@@ -8,17 +8,46 @@ module.exports = function(RED) {
         this.status({fill:"blue", shape:"dot", text:this.port_name});
 
         var node = this;
-        node.on('input', function(msg) {
-            const exec = require('child_process').exec;
-            this.status({fill:"yellow", shape:"ring", text:this.port_name + " connecting"});
 
-            exec('python -u ' + path.join( __dirname , 'grove-time-of-flight-distance.py' ) + ' ' + msg.payload, (err, stdout, stderr) => {
-                if (err) { console.log(err); }
-                console.log('stdout', stdout);
-                msg.payload = stdout;
-                this.status({fill:"green",shape:"dot",text:this.port_name + " connected"});
-                node.send(msg);
-            });
+        const spawn = require('child_process').spawn;
+        const grove_python = spawn('python', [ '-u' , path.join( __dirname , 'grove-time-of-flight-distance.py' ) ]);
+        this.status({fill:"green",shape:"dot",text:this.port_name + " listened"});
+
+        grove_python.stdout.on('data', (data) => {
+            node.log(`stdout: ${data}`);
+
+            this.status({ fill: "blue", shape: "dot", text: this.port_name + " value chanded" });
+            let _self = this;
+
+            msg = {};
+            
+            msg.payload = data;
+            node.send(msg);
+            
+            setTimeout(
+                function(){
+                    _self.status({fill:"green",shape:"dot",text:_self.port_name + " listened"});
+                },200
+            )
+            
+        });
+        
+        grove_python.stderr.on('data', (data) => {
+            // console.log(`stderr: ${data}`);
+            this.status({fill:"red",shape:"ring",text:this.port_name + " error"});
+            let jsonData = data.toString();
+            msg = {};
+            msg.payload = jsonData;
+            node.send(msg);
+        });
+        
+        grove_python.on('close', (code) => {
+            this.status({fill:"red",shape:"ring",text:this.port_name + " disconnected"});
+
+            let jsonData = "child process exited with code " + code;
+            msg = {};
+            msg.payload = jsonData;
+            node.send(msg);
         });
     }
     
