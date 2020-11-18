@@ -22,5 +22,5 @@ module.exports = function(RED) {
         });
     }
     
-    RED.nodes.registerType("grove-ultrasonic-ranger", GroveTimeOfFlightDistance);
+    RED.nodes.registerType("grove-time-of-flight-distance", GroveTimeOfFlightDistance);
 }
