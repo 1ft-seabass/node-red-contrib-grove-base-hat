@@ -6,7 +6,7 @@
             name: { value: "" },
             port_number: { value: 5 }
         },
-        inputs: 1,
+        inputs: 0,
         outputs: 1,
         icon: "bridge.png",
         label: function () {
@@ -28,13 +28,13 @@
 </script>
 
 <script type="text/x-red" data-help-name="grove-time-of-flight-distance">
-    <p>The node controls Grove Ultrasonic Ranger.</p>
+    <p>The node read distance from Grove Time of Flight Distance Sensor (VL53L0X) v1.0</p>
     <h3>Outputs</h3>
         <dl class="message-properties">
         <dt>payload
             <span class="property-type">number</span>
         </dt>
-        <dd>the payload of detected Grove Ultrasonic Ranger data. The data unit publish as centimeter.</dd>
+        <dd>The distance unit as millimeter.</dd>
     <h3>Details</h3>
-    <p>This node listens to Grove Ultrasonic Ranger and publish the detected its sensor data.</p>
+    <p>This node listens to Grove Time of Flight Distance Sensor (VL53L0X) v1.0 and publish the detected distance from its sensor.</p>
 </script>
