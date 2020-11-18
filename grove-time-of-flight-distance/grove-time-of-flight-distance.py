@@ -59,7 +59,8 @@ def main():
         st = vl53.wait_ready()
         if not st:
             continue
-        print("Distance = {} mm".format(vl53.get_distance()))
+        # print("Distance = {} mm".format(vl53.get_distance()))
+        print(vl53.get_distance())
         time.sleep(0.5)
 
 

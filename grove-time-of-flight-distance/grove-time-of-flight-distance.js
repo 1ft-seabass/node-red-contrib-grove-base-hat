@@ -14,14 +14,14 @@ module.exports = function(RED) {
         this.status({fill:"green",shape:"dot",text:this.port_name + " listened"});
 
         grove_python.stdout.on('data', (data) => {
-            node.log(`stdout: ${data}`);
+            node.log(`Distance = ${data} mm`);
 
             this.status({ fill: "blue", shape: "dot", text: this.port_name + " value chanded" });
             let _self = this;
 
             msg = {};
             
-            msg.payload = data;
+            msg.payload = parseInt(data);
             node.send(msg);
             
             setTimeout(
@@ -33,9 +33,9 @@ module.exports = function(RED) {
         });
         
         grove_python.stderr.on('data', (data) => {
-            // console.log(`stderr: ${data}`);
             this.status({fill:"red",shape:"ring",text:this.port_name + " error"});
-            let jsonData = data.toString();
+
+            let jsonData = parseInt(data);
             msg = {};
             msg.payload = jsonData;
             node.send(msg);
