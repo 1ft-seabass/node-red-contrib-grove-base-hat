@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# This code is for Grove - 3-Axis Digital Accelerometer(+/-1.5g)
+# This code is for Grove - 3-Axis Digital Accelerometer(+/-16g)
 #
 # which is a low power high performance 3-axis linear accelerometer belonging
 # to the "nano" family, with digital I2C serial interface standard output.

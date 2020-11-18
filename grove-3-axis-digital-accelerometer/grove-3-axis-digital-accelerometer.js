@@ -4,27 +4,20 @@ module.exports = function(RED) {
     function Grove3AxisDigitalAccelerometerNode(config) {
         RED.nodes.createNode(this,config);
 
-        this.port_number = config.port_number;
-
         this.port_name = "I2C";
         this.status({fill:"blue",shape:"dot",text:this.port_name});
         
         var node = this;
         var msg;
 
-        const gpio_pin = this.port_number;
         const spawn = require('child_process').spawn;
-        const grove_python = spawn('python', [ '-u' , path.join( __dirname , 'grove-3-axis-digital-accelerometer-16g.py' ) , gpio_pin ]);
+        const grove_python = spawn('python', [ '-u' , path.join( __dirname , 'grove-3-axis-digital-accelerometer-16g.py' ) ]);
         this.status({fill:"green",shape:"dot",text:this.port_name + " listened"});
-        
-        this.on("input", function(msg) {
-            this.send(msg);
-        });
 
         grove_python.stdout.on('data', (data) => {
             node.log(`stdout: ${data}`);
 
-            this.status({fill:"blue",shape:"dot",text:this.port_name + " value chanded"});
+            this.status({ fill: "blue", shape: "dot", text: this.port_name + " value chanded" });
             let _self = this;
 
             msg = {};
