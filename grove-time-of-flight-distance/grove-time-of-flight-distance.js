@@ -14,7 +14,7 @@ module.exports = function(RED) {
         this.status({fill:"green",shape:"dot",text:this.port_name + " listened"});
 
         grove_python.stdout.on('data', (data) => {
-            node.log(`Distance = ${data} mm`);
+            node.log(`Distance = ${parseInt(data)} mm`);
 
             this.status({ fill: "blue", shape: "dot", text: this.port_name + " value chanded" });
             let _self = this;
