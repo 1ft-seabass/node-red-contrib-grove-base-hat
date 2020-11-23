@@ -1,0 +1,40 @@
+<script type="text/javascript">
+    RED.nodes.registerType('grove-time-of-flight-distance', {
+        category: 'grove-base-hat',
+        color: '#a6bbcf',
+        defaults: {
+            name: { value: "" },
+            port_number: { value: 5 }
+        },
+        inputs: 0,
+        outputs: 1,
+        icon: "bridge.png",
+        label: function () {
+            return this.name || "grove-time-of-flight-distance";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="grove-time-of-flight-distance">
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Port I2C</label>
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="grove-time-of-flight-distance">
+    <p>The node read distance from Grove Time of Flight Distance Sensor (VL53L0X) v1.0</p>
+    <h3>Outputs</h3>
+        <dl class="message-properties">
+        <dt>payload
+            <span class="property-type">number</span>
+        </dt>
+        <dd>The distance unit as millimeter.</dd>
+    <h3>Details</h3>
+    <p>This node listens to Grove Time of Flight Distance Sensor (VL53L0X) v1.0 and publish the detected distance from its sensor.</p>
+</script>

@@ -1,0 +1,40 @@
+<script type="text/javascript">
+    RED.nodes.registerType('grove-3-axis-digital-accelerometer', {
+        category: 'grove-base-hat',
+        color: '#a6bbcf',
+        defaults: {
+            name: { value: "" },
+            port_number: { value: 5 }
+        },
+        inputs: 0,
+        outputs: 1,
+        icon: "arrow-in.png",
+        label: function () {
+            return this.name || "grove-3-axis-digital-accelerometer";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="grove-3-axis-digital-accelerometer">
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Port</label>
+        I2C
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="grove-3-axis-digital-accelerometer">
+    <p>The node controls Grove 3-axis-digital-accelerometer (+/- 16g).</p>
+    <h3>Outputs</h3>
+        <dl class="message-properties">
+        <dt>payload
+            <span class="property-type">string</span>
+        </dt>
+    <h3>Details</h3>
+    <p>This node listens to Grove 3-axis-digital-accelerometer (+/- 16g) and response x, y, z status.</p>
+</script>
