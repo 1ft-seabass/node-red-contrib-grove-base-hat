@@ -11,6 +11,7 @@ module.exports = function(RED) {
         this.port_number = config.port_number;
 
         this.port_name = "D" + this.port_number;
+        this.device = config.device;
         this.status({fill:"blue",shape:"dot",text:this.port_name});
         
         var node = this;
@@ -19,7 +20,8 @@ module.exports = function(RED) {
             const gpio_pin = this.port_number;
             const exec = require('child_process').exec;
             this.status({fill:"yellow",shape:"ring",text:this.port_name + " connecting"});
-            exec('python -u ' + path.join( __dirname , 'grove-led.py') + ' ' + gpio_pin + ' ' + msg.payload, (err, stdout, stderr) => {
+            console.log(this.device);
+            exec('python -u ' + path.join( __dirname , this.device + '.py') + ' ' + gpio_pin + ' ' + msg.payload, (err, stdout, stderr) => {
                 if (err) { console.log(err); }
                 // console.log(stdout);
                 this.status({fill:"green",shape:"dot",text:this.port_name + " connected"});

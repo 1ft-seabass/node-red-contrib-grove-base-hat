@@ -4,7 +4,8 @@
         color: '#a6bbcf',
         defaults: {
             name: {value:""},
-            port_number: {value:5}
+            port_number: {value:5},
+            device: { value: "grove-led" }
         },
         inputs:1,
         outputs:0,
@@ -26,6 +27,14 @@
             <option value="22">D22</option>
             <option value="24">D24</option>
             <option value="26">D26</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-device"><i class="icon-device"></i> Device</label>
+        <select style="width:90px; margin-left:20px;" id="node-input-device" value="grove-led">
+            <option value="grove-led">LED</option>
+            <option value="grove-variable-color-led">Variable color LED</option>
         </select>
     </div>
 
