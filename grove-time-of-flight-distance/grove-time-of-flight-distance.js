@@ -1,22 +1,19 @@
 var path = require('path');
+const spawn = require('child_process').spawn;
+const grove_python = spawn('python', [ '-u' , path.join( __dirname , 'grove-time-of-flight-distance.py' ) ]);
 
 module.exports = function(RED) {
     function GroveTimeOfFlightDistance(config) {
         RED.nodes.createNode(this,config);
 
         this.port_name = "I2C";
-        this.status({fill:"blue", shape:"dot", text:this.port_name});
 
         var node = this;
-
-        const spawn = require('child_process').spawn;
-        const grove_python = spawn('python', [ '-u' , path.join( __dirname , 'grove-time-of-flight-distance.py' ) ]);
+        
         this.status({fill:"green",shape:"dot",text:this.port_name + " listened"});
 
         grove_python.stdout.on('data', (data) => {
-            node.log(`Distance = ${parseInt(data)} mm`);
-
-            this.status({ fill: "blue", shape: "dot", text: this.port_name + " value chanded" });
+            this.status({ fill: "blue", shape: "dot", text: this.port_name + " value changed" });
             let _self = this;
 
             msg = {};
