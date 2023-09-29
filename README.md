@@ -2,6 +2,10 @@
 
 The node for Grove Base HAT for Raspberry Pi.
 
+## ChangeLog
+
+2023/09/28 Trying new approach.
+
 ## Note
 
 ![2019-07-30_17h51_25.jpg (218.9 kB)](https://img.esa.io/uploads/production/attachments/3062/2019/08/02/8131/6f65c5d3-d0cd-4585-b2e9-9a22104e9cec.jpg)
